@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notebook-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notebook-frontend
+  template:
+    metadata:
+      labels:
+        app: notebook-frontend
+    spec:
+      containers:
+      - name: notebook-frontend
+        image: shobhitrastogi/notebook-frontend:latest
+        ports:
+        - containerPort: 80
